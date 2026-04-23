@@ -1,0 +1,37 @@
+
+{{> menu id="about"}}
+<section class="ui center aligned segment">
+
+<h2>About Shark Species Database app</h2>
+
+<p>
+Shark Species Database is a web app that displays information about different shark
+species and the sharks.
+</p>
+<div class="aboutContainer">
+  <div class ="aboutLeft">
+    <div class="card">
+  <div class="content">
+    <a class="header">{{author.fullname}}</a>
+    <div class="meta">
+      <span class="date">joined SETU in: {{author.created}}</span>
+    </div>
+    <div class="description">
+      {{author.name}} is an {{author.job}} living in {{author.city}}.
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="content">
+    <a class="header"> Contact Information</a>
+    <div class="description">
+      <p>Email: {{author.email}}</p>
+      <p>Phone: {{author.phone}}</p>
+    </div>
+  </div>
+</div>
+  </div>
+    <img src="images/waterfordMap.png" alt="College Location" width="400">
+</div>
+
+</section>

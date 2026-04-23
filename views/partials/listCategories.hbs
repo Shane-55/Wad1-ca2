@@ -1,0 +1,33 @@
+<section class="ui left aligned middle aligned segment">
+  
+  <h2>Shark App Dashboard</h2>
+  
+  {{#unless playlists}}
+    <h3 class="ui message">
+      Start adding categories
+    </h3>
+  {{/unless}}
+
+  {{#each species}}
+    <section class="ui left aligned middle aligned segment">
+
+      <h3 class="ui header">
+        {{title}}
+      </h3>
+      
+      {{#if sharks}}
+        <p>
+          Total sharks: {{sharks.length}}
+        </p>
+      {{else}}
+        <p>
+          Empty category!
+        </p>
+      {{/if}}
+	  <a href="/species/{{id}}">
+	     <i class = "ui open folder outline black icon"></i>
+	  </a>
+    </section>
+  {{/each}}
+
+</section>

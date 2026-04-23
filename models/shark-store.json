@@ -1,0 +1,71 @@
+{
+  "sharkCollection": [
+    {
+      "id": "01",
+      "title": "CARCHARHINIFORMES",
+      "image": "/images/CARCHARHINIFORMES.jpg",
+      "sharks": [
+        {
+          "id": "04",
+          "title": "Blacktip reef shark",
+          "length": "1.6m"
+        },
+        {
+          "id": "05",
+          "title": "Bull shark",
+          "length": "2.9m - 3.24m"
+        },
+        {
+          "id": "06",
+          "title": "Ocreanic whitetip shark",
+          "length": "2m-3.5m"
+        },
+        {
+          "id": "845340ad-e7d1-4267-bb79-d84917b6aba2",
+          "title": "tiger",
+          "length": "5"
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "title": "HEXANCHIFORMES",
+      "image": "/images/hexanchiformes-1.jpg",
+      "sharks": [
+        {
+          "id": "07",
+          "title": "Sharpnose sevengill shark",
+          "length": "1m - 1.4m"
+        },
+        {
+          "id": "08",
+          "title": "Frilled shark",
+          "length": "1.3m - 1.96m"
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "title": "LAMNIFORMES",
+      "image": "/images/order-lamniformes-1.jpg",
+      "sharks": [
+        {
+          "id": "09",
+          "title": "Porbeagle shark",
+          "length": "2m-3m"
+        }
+      ]
+    },
+    {
+      "id": "9942b9e5-024e-45a4-b080-1de4aa4a600e",
+      "title": "Test category",
+      "sharks": [
+        {
+          "id": "1d69c0d1-2fca-42c1-bffd-117d056396d8",
+          "title": "test shark",
+          "length": "5m"
+        }
+      ]
+    }
+  ]
+}

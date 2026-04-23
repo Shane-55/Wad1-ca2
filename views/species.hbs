@@ -1,0 +1,25 @@
+{{> menu id="species"}}
+
+<section class="ui segment">
+
+<h2>{{order.title}}</h2>
+<p>Sharks in this species:</p>
+
+<div class="ui cards">
+{{#each order.sharks}}
+<div class="ui card">
+  <div class="content">
+    <div class="header">
+      {{title}}
+    </div>
+    <div class="description">
+      <p><b>Length:</b> {{length}}</p>
+    </div>
+  </div>
+</div>
+{{/each}}
+<section class="ui center aligned middle aligned segment">
+    {{> addshark id=order.id}}
+  </section>
+</div>
+</section>

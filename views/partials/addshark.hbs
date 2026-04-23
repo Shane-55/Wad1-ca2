@@ -1,0 +1,15 @@
+<form class="ui stacked segment form" action="/species/{{id}}/addshark" method="POST">
+  <div class="two fields">
+    <div class="field">
+      <label>Title</label>
+      <input type="text" name="title" autofocus required title = "Please include a valid Title"
+	  placeholder="Title">
+    </div>
+    <div class="field">
+      <label>Length</label>
+      <input type="text" name="length" required title = "Please include a valid length"
+	  placeholder="Length"  >
+    </div>
+  </div>
+  <button class="ui blue submit button">Add Shark</button>
+</form>
