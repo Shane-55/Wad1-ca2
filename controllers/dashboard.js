@@ -29,8 +29,38 @@ const dashboard = {
     response.redirect('/dashboard');
 },
 
+deleteCategory(request, response) {
+  const id = request.params.id;
+  const category = sharkStore.getShark(id);
+  logger.debug('Deleting category ${id}');
+  sharkStore.removeCollection("sharkCollection", category);
+  response.redirect('/dashboard');
 
-};
 
+},
+
+search(request, response) {
+  const query = request.query.query.toLowerCase();
+  const sharkCollection = sharkStore.getAllSharks();
+  const filteredCollection = sharkCollection.map(species => {
+    const filteredSharks = species.sharks.filter(shark =>
+      shark.title.toLowerCase().includes(query)
+    );
+
+    return {
+      ...species,
+      sharks: filteredSharks
+    };
+  }).filter(species => species.sharks.length > 0);
+
+  const viewDataSearch = {
+    title: "Dashboard Search Results",
+    species: filteredCollection
+  };
+
+  response.render('dashboard', viewDataSearch);
+},
+
+}
 export default dashboard;
 

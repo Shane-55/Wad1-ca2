@@ -1,33 +1,6 @@
 {
   "sharkCollection": [
     {
-      "id": "01",
-      "title": "CARCHARHINIFORMES",
-      "image": "/images/CARCHARHINIFORMES.jpg",
-      "sharks": [
-        {
-          "id": "04",
-          "title": "Blacktip reef shark",
-          "length": "1.6m"
-        },
-        {
-          "id": "05",
-          "title": "Bull shark",
-          "length": "2.9m - 3.24m"
-        },
-        {
-          "id": "06",
-          "title": "Ocreanic whitetip shark",
-          "length": "2m-3.5m"
-        },
-        {
-          "id": "845340ad-e7d1-4267-bb79-d84917b6aba2",
-          "title": "tiger",
-          "length": "5"
-        }
-      ]
-    },
-    {
       "id": "02",
       "title": "HEXANCHIFORMES",
       "image": "/images/hexanchiformes-1.jpg",
@@ -35,12 +8,12 @@
         {
           "id": "07",
           "title": "Sharpnose sevengill shark",
-          "length": "1m - 1.4m"
+          "length": "1.2m"
         },
         {
           "id": "08",
           "title": "Frilled shark",
-          "length": "1.3m - 1.96m"
+          "length": "1.5m"
         }
       ]
     },
@@ -52,18 +25,38 @@
         {
           "id": "09",
           "title": "Porbeagle shark",
-          "length": "2m-3m"
+          "length": "2.5m"
+        },
+        {
+          "id": "2e74e18e-961d-4352-b85e-c0619cc229b5",
+          "title": "Great white shark",
+          "length": "4.6m"
+        },
+        {
+          "id": "95171e89-2926-4b6e-8356-9f5509218100",
+          "title": "shortfin mako shark",
+          "length": "3.2m"
         }
       ]
     },
     {
-      "id": "9942b9e5-024e-45a4-b080-1de4aa4a600e",
-      "title": "Test category",
+      "id": "7beb50b4-7f00-4a25-913e-02337b02a008",
+      "title": "CARCHARHINIFORMES",
       "sharks": [
         {
-          "id": "1d69c0d1-2fca-42c1-bffd-117d056396d8",
-          "title": "test shark",
-          "length": "5m"
+          "id": "bcae8c4c-a46f-4d0f-b950-5e18f8eea731",
+          "title": "Blacktip reef shark",
+          "length": "1.6m"
+        },
+        {
+          "id": "ba632f52-2260-467f-a9ae-cf425800a002",
+          "title": "Bull shark",
+          "length": "2.6m"
+        },
+        {
+          "id": "1f8a2fd6-b2a7-4128-80c7-bf9db3cbe089",
+          "title": "Tiger shark",
+          "length": "3.2m"
         }
       ]
     }

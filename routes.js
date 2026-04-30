@@ -15,7 +15,12 @@ router.get('/dashboard', dashboard.createView);
 router.get('/species/:id', species.createView);
 router.get('/about', about.createView);
 router.get('/facts', facts.createView);
+router.get('/species/:id/delete/:sharkId',species.deleteShark);
+router.get('/dashboard/delete/:id', dashboard.deleteCategory);
+router.get('/species/:id/edit/:sharkId', species.editShark);
+router.get('/dashboard/search', dashboard.search);  
 
+router.post('/species/:id/edit/:sharkId', species.updateShark);
 router.post('/species/:id/addshark', species.addShark);
 router.post('/dashboard/addCategory', dashboard.addCategory);
 

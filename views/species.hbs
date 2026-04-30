@@ -9,12 +9,22 @@
 {{#each order.sharks}}
 <div class="ui card">
   <div class="content">
+
     <div class="header">
       {{title}}
     </div>
+
     <div class="description">
       <p><b>Length:</b> {{length}}</p>
+      <a href="/species/{{../order.id}}/delete/{{id}}" 
+        onclick="return confirm('Are you sure you want to delete this shark?');">
+        <i class="black trash icon"></i>
+      </a>
+      <a href="/species/{{../order.id}}/edit/{{id}}">
+        <i class="black edit icon"></i>
+      </a>
     </div>
+
   </div>
 </div>
 {{/each}}
@@ -23,3 +33,19 @@
   </section>
 </div>
 </section>
+<div class="ui segment center aligned">
+<form method="GET">
+
+  <label>Sort by:</label>
+  <select name="sort" onchange="this.form.submit()">
+    <option value="title" {{#if titleSelected}}selected{{/if}}>Title</option>
+    <option value="length" {{#if lengthSelected}}selected{{/if}}>Length</option>
+  </select>
+
+  <label>Order:</label>
+  <select name="order" onchange="this.form.submit()">
+    <option value="asc" {{#if ascSelected}}selected{{/if}}>Ascending</option>
+    <option value="desc" {{#if descSelected}}selected{{/if}}>Descending</option>
+  </select>
+</form>
+</div>

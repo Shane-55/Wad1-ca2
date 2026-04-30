@@ -4,28 +4,21 @@
 
 <h2>Shark Species</h2>
 <p>Select a Species to view the sharks.</p>
-
+<form action="/dashboard/search" method="GET" class="ui form">
+  <div class="ui action input">
+    <input 
+    type="text" 
+    name="query" 
+    placeholder="Search sharks..." 
+    autofocus required>
+    <button class="ui blue button">Search</button>
+  </div>
+  
+  <a href="/dashboard">
+    <i class="refresh icon"></i>
+    </a>
+</form>
 {{> listCategories}}
 {{> addCategory}}
-<div class="ui divided list">
-{{#each species}}
 
-<div class="item">
-    <div class="content">
-    <div class="header">
-        {{species}}
-    </div>
-    
-    <h2>{{title}}</h2> 
-    <hr style="width: 200px;"> - <img src="{{image}}" style="width: 400" >
-     <br>
-    <a href="/species/{{id}}" class="ui blue button">
-        View Species
-    </a>
-    <hr>
-    </div>
-  </div>
-
-{{/each}}
-</div>
 </section>

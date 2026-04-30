@@ -1,11 +1,9 @@
 <section class="ui left aligned middle aligned segment">
   
-  <h2>Shark App Dashboard</h2>
+  <h2 class="ui center aligned header">Shark App Dashboard</h2>
   
   {{#unless playlists}}
-    <h3 class="ui message">
-      Start adding categories
-    </h3>
+    
   {{/unless}}
 
   {{#each species}}
@@ -27,7 +25,9 @@
 	  <a href="/species/{{id}}">
 	     <i class = "ui open folder outline black icon"></i>
 	  </a>
+    <a href="/dashboard/delete/{{id}}">
+    <i class="black alternate trash icon"></i>
+    </a>
     </section>
   {{/each}}
 
-</section>

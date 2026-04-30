@@ -15,7 +15,7 @@ const sharkStore = {
 
   getShark(id) {
     return this.store.findOneBy(this.collection, (shark => shark.id === id));
-},
+  },
 
   addShark(id, shark) {
     this.store.addItem(this.collection, id, this.array, shark);
@@ -24,6 +24,25 @@ const sharkStore = {
   addCategory(category) {
     this.store.addCollection(this.collection, category);
 },
+
+  removeShark(id, sharkId) {
+    this.store.removeItem(this.collection, id, this.array, sharkId);
+  },
+
+  removeCollection(collection, category) {
+    this.store.removeCollection(collection, category);
+  },
+
+  editItem(orderId, sharkId, updatedShark) {
+    this.store.editItem(this.collection, orderId, sharkId, this.array, updatedShark);
+  },
+
+  search(searchTerm) {
+    return this.store.findBy(
+      this.collection, 
+      (shark) => { species.toLowerCase().includes(searchTerm.toLowerCase()) }
+    );
+  }
 
 
 };

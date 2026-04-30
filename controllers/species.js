@@ -16,14 +16,45 @@ const species = {
     //finds the shark in the store using the id
     const order = sharkStore.getShark(sharkId);
 
-    //data thats sent to handlebars, includeds shark details & title
-    const viewData = {
-      title: "species Details",
-      order: order
-    };
+    const speciesId = request.params.id;
+  const orderData = sharkStore.getShark(speciesId);
 
-    //renders the species view with the data
-    response.render("species", viewData);
+  let sharks = orderData.sharks;
+
+  const sortField = request.query.sort;
+  const orderSort = request.query.order === 'desc' ? -1 : 1;
+
+  if (sortField) {
+    sharks = sharks.slice().sort((a, b) => {
+
+      if (sortField === "title") {
+        return a.title.localeCompare(b.title) * orderSort;
+      }
+
+      if (sortField === "length") {
+        return ( parseFloat(a.length) - parseFloat(b.length)) * orderSort;
+}
+
+      return 0;
+    });
+  }
+
+  const viewData = {
+    title: "species Details",
+      orderSort,
+    title: "Species Details",
+    order: {
+      ...orderData,
+      sharks
+    },
+    titleSelected: request.query.sort === "title",
+    lengthSelected: request.query.sort === "length",
+    ascSelected: request.query.order === "asc",
+    descSelected: request.query.order === "desc"
+  };
+
+  response.render("species", viewData);
+
   },
 
   addShark(request, response) {
@@ -38,6 +69,40 @@ const species = {
     response.redirect('/species/' + sharkId);
   },
 
-};
+  deleteShark(request, response) {
+    const orderId = request.params.id;
+    const sharkId = request.params.sharkId;
+    sharkStore.removeShark(orderId, sharkId);
+    response.redirect('/species/' + orderId);
+  },
+
+  editShark(request, response) {
+    const speciesId = request.params.id;
+    const sharkId = request.params.sharkId;
+    const species = sharkStore.getShark(speciesId);
+  const shark = species.sharks.find(s => s.id === sharkId);
+
+  response.render('editShark', {
+    title: "Edit Shark",
+    species,
+    shark
+    });
+  },
+
+updateShark(request, response) {  
+  const speciesId = request.params.id;
+  const sharkId = request.params.sharkId;
+  const updatedShark = {
+    id: sharkId,
+    title: request.body.title,
+    length: request.body.length
+  };
+
+  sharkStore.editItem(speciesId, sharkId, updatedShark);
+
+  response.redirect('/species/' + speciesId);
+},
+}
+;
 
 export default species;
